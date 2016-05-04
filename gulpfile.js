@@ -29,9 +29,9 @@ var interceptErrors = function(error) {
 
 
 gulp.task('browserify', ['views'], function() {
-  return browserify('./src/js/app.js')
+  return browserify('./src/js/app.js') //let you call import, export in JS files
       .transform(babelify, {presets: ["es2015"]})
-      .transform(ngAnnotate)
+      .transform(ngAnnotate)//allows you to use Angular module built-in dependency injection
       .bundle()
       .on('error', interceptErrors)
       //Pass desired output filename to vinyl-source-stream
