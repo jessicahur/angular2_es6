@@ -11,13 +11,14 @@ class AuthCtrl {
   submitForm() {
     this.isSubmitting = true;
 
-    this._User.attempAuth(this.authType, this.formData).then(
+    this._User.attemptAuth(this.authType, this.formData).then(
       (res) => {
         this.isSubmitting = false;
         console.log(res);
       },
       (err) => {
         this.isSubmitting = false;
+        this.errors = err.data.errors;
         console.log(err.data.errors);
       });
   }

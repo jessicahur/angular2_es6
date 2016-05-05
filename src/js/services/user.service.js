@@ -4,10 +4,11 @@ export default class User {
     this._AppConstants = AppConstants;
     this._$http = $http;
 
+    //Object to store our use properties
     this.current = null;
   }
 
-  attempAuth(type, credentials) {
+  attemptAuth(type, credentials) {
     let route = (type === 'login') ? '/login' : '';
     return this._$http({
       url: this._AppConstants.api + '/users' + route,
