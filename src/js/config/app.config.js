@@ -6,7 +6,7 @@ function AppConfig($httpProvider, $stateProvider, $locationProvider, $urlRouterP
   //Push interceptor for auth
   $httpProvider.interceptors.push(authInterceptor);
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 
   $stateProvider
   .state('app', {
